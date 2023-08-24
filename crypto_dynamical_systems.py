@@ -1029,26 +1029,9 @@ class TestDynamicalSystems(unittest.TestCase):
 def main():
 
     print("In Main ... \n")
-    #download_historical_price_df()    
-
-
-    #get_option_prices(start_date="2023-01-01", end_date = "2023-02-01")
 
     run_trading_algo(trading_start_date_str="2023-03-01", trading_end_date_str="2023-04-01")
 
-    #iterate_map(k=None,
-    #           non_linear_bounded=False,
-    #           actual_prices=None,
-    #           actual_volume=None, 
-    #           average_volume=100, 
-    #           file_name_override=None,
-    #           forecast_plotting=False,
-    #           only_minimize_price_error=True)
-
-
-    #conduct_fourier_analysis()
-
-    #conduct_eth_bitcoin_correlation_analysis()
 
 main()
 

@@ -1009,7 +1009,9 @@ def main():
     #download_historical_price_df()    
 
     
+
     run_trading_algo(trading_start_date_str="2023-03-01", trading_end_date_str="2023-04-01")
+
 
 main()
 

@@ -343,11 +343,6 @@ def brute_force(ranges, prices):
                 pass
         c += 1
     return x_min, e_min 
-    
-
-   
-
-
 
 def get_crypto_currency_df(ticker, start_date="2020-01-01", end_date="2023-06-27"):
 
@@ -363,20 +358,7 @@ def get_crypto_currency_df(ticker, start_date="2020-01-01", end_date="2023-06-27
     df["Volume"] = df["v"]
     return df
 
-#We need to download the appropiate the option prices. 
-#How do we download option prices. 
-
 def get_crypto_currency_df(ticker, start_date="2020-01-01", end_date="2023-06-27"):
-
-    #I cannot get the prices from polygon. 
-    #The links that Paul provided me were: 
-    #1. https://defillama.com/
-    #2. we can trade here: https://app.aevo.xyz/option/eth
-    #3. https://docs.aevo.xyz/reference/overview
-    #4. https://github.com/aevoxyz/aevo-sdk
-    #5. Lyra Finance is good too: https://app.lyra.finance/#/trade/arbitrum/eth-usdc
-
-
 
     r = requests.get(f"https://api.polygon.io/v2/aggs/ticker/X:{ticker}USD/range/1/day/{start_date}/{end_date}?apiKey=5KaYTqFoTFjUIjtv1SUUxP_2TTaAJp2j")
     r_json = r.json()
@@ -868,11 +850,6 @@ def conduct_eth_bitcoin_correlation_analysis():
     plt.title("ETH/BTC Price Correlation, Score: {0}".format(score))
     plt.show()
 
-
-
-
-
-
 class Portfolio(object):
 
     def __init__(self, starting_cash):
@@ -1031,24 +1008,8 @@ def main():
     print("In Main ... \n")
     #download_historical_price_df()    
 
-
-    #get_option_prices(start_date="2023-01-01", end_date = "2023-02-01")
-
+    
     run_trading_algo(trading_start_date_str="2023-03-01", trading_end_date_str="2023-04-01")
-
-    #iterate_map(k=None,
-    #           non_linear_bounded=False,
-    #           actual_prices=None,
-    #           actual_volume=None, 
-    #           average_volume=100, 
-    #           file_name_override=None,
-    #           forecast_plotting=False,
-    #           only_minimize_price_error=True)
-
-
-    #conduct_fourier_analysis()
-
-    #conduct_eth_bitcoin_correlation_analysis()
 
 main()
 

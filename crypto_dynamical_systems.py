@@ -872,11 +872,6 @@ class Portfolio(object):
         else:
             variance_reduced = False
 
-        #We will aim to just buy and sell. 
-        #The idea that we have here is that we will 
-
-
-
         required_increase = 1.01
         if variance_reduced: 
             if expected_future_price > required_increase * price:
@@ -974,7 +969,6 @@ def run_trading_algo(trading_start_date_str="2022-06-01",
         current_date_str = current_date.strftime("%Y-%m-%d")
         print("Trading For Date {0} \n".format(current_date_str))
 
-        #Calibrate forecaster to historical data
 
         mean_t, var_t, prob_t = calibrate_and_forecast(calibrate_start_period = current_date_minus_sixty_str,
                                                        calibrate_end_period = current_date_minus_one_str, 
@@ -982,9 +976,6 @@ def run_trading_algo(trading_start_date_str="2022-06-01",
                                                        forecast_number_of_days = 14)
 
         current_date = current_date + timedelta(days = 1)
-
-        #Execute trading algorithms
-
         p.execute_trading_algorithms(current_date_str, mean_t, var_t, prob_t)
 
         portfolio_position = p.get_current_share_position() * p.get_current_spot_position() + p.get_current_cash_position()

@@ -10,6 +10,7 @@ To use the module:
     3. Type python crypto_dynamical_systems.py
     4. Look for forecast called cyrpto_dynamical_system_forecast.png in folder. 
 
+
 """
 
 
